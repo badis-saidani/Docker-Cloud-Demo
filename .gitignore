@@ -30,7 +30,7 @@ application.properties
 *.settings/
 
 # Angular
-/.angular/
+.angular/
 npm-debug.log
 package-lock.json
 
