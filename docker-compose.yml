@@ -1,0 +1,11 @@
+services:
+  demo-api:
+    container_name: demo-api
+    image: demo:0.1.0
+    ports:
+    - 8080:8080
+  demo-ui:
+    container_name: demo-ui
+    image: demo-ui:0.1.0
+    ports:
+    - 80:80

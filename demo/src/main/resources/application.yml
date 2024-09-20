@@ -1,0 +1,7 @@
+logging:
+  file:
+   name: logs/demo.log
+  level:
+    root: info
+    com.badissaidani.demo: DEBUG
+

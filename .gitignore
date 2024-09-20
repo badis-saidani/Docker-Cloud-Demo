@@ -1,0 +1,54 @@
+# General
+.DS_Store
+Thumbs.db
+node_modules/
+dist/
+target/
+out/
+*.log
+
+# Java/Spring Boot
+*.class
+*.jar
+*.war
+*.ear
+*.iml
+.gradle/
+build/
+logs/
+*.log
+spring.log
+application.properties
+
+# IDEs
+.idea/
+*.sublime-workspace
+*.sublime-project
+.vscode/
+*.classpath
+*.project
+*.settings/
+
+# Angular
+/.angular/
+npm-debug.log
+package-lock.json
+
+# Secret
+*.pem
+*.tar
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+
+# Operating System
+# Mac
+*.DS_Store
+# Windows
+Thumbs.db
+# Linux
+*.swp
+
+
