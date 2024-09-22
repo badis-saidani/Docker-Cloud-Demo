@@ -1,14 +1,14 @@
 services:
   demo-api:
     container_name: demo-api
-    image: badissaidani/demo-api
+    image: badissaidani/demo-api:latest
     ports:
     - 8080:8080
     restart: always
 
   demo-ui:
     container_name: demo-ui
-    image: badissaidani/demo-ui
+    image: badissaidani/demo-ui:latest
     ports:
     - 80:80
     restart: always

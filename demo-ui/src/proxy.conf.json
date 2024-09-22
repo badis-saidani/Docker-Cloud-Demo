@@ -1,0 +1,11 @@
+{
+    "/zenApi": {
+      "target": "https://zenquotes.io",
+      "secure": true,
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/zenApi": ""
+      }
+    }
+  }
+  

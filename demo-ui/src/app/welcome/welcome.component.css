@@ -1,0 +1,6 @@
+.blockquote {
+    font-style: italic;
+    margin: 20px auto;
+    border-left: 0.25rem solid #007bff; /* Customize the border color */
+  }
+  

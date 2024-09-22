@@ -1,7 +1,17 @@
 <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
     <div class="text-center">
-      <h1>{{ msg }}</h1>
-      <h2>Have a good day, {{ username }}!</h2>
+
+      <h2 class="display-4">{{ msg }}</h2>
+
+      <div *ngIf="quote">
+        <h2 class="lead mt-4">Today's Random Quote</h2>
+        <div  class="blockquote text-center mt-4">
+          <p class="mb-0">“{{ quote }}”</p>
+          <footer class="blockquote-footer" *ngIf="author">{{ author }}</footer>
+        </div>
+      </div>
+      
+      <h2 class="mt-5">Have a good day, {{ username }}!</h2>
       <button class="btn btn-danger mt-3" (click)="exit()">Exit</button>
     </div>
   </div>
