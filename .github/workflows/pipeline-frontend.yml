@@ -24,6 +24,20 @@ jobs:
         with:
           node-version: '18'
 
+	# Debug Step: List Root Directory
+      - name: List Root Directory
+        run: ls -la
+        working-directory: ./
+
+      # Debug Step: List demo-ui Directory
+      - name: List demo-ui Directory
+        run: ls -la
+        working-directory: ./demo-ui
+
+	# Step 3: Navigate to demo-ui directory
+      - name: Change Directory
+        run: cd demo-ui
+
       # 3. Install Dependencies
       - name: Install Dependencies
         working-directory: demo-ui
