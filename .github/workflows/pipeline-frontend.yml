@@ -16,7 +16,7 @@ jobs:
       - name: Checkout Frontend Code
         uses: actions/checkout@v4
         with:
-          path: frontend
+          path: demo-ui
 
       # 2. Set up Node.js
       - name: Set up Node.js
@@ -26,13 +26,13 @@ jobs:
 
       # 3. Install Dependencies
       - name: Install Dependencies
-        working-directory: ./demo-ui
+        working-directory: demo-ui
         run: |
           npm install
 
       # 4. Build Angular Application
       - name: Build Angular Application
-        working-directory: ./demo-ui
+        working-directory: demo-ui
         run: |
           npm run build --prod
 
@@ -45,7 +45,7 @@ jobs:
 
       # 6. Build Docker Image
       - name: Build Frontend Docker Image
-        working-directory: ./demo
+        working-directory: demo-ui
         run: |
           docker build -t ${{ secrets.DOCKER_USERNAME }}/demo-ui:latest .
 

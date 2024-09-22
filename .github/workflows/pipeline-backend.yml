@@ -27,7 +27,7 @@ jobs:
 
       # 3. Build Spring Boot Application
       - name: Build Spring Boot Application
-        working-directory: ./demo
+        working-directory: demo-api
         run: |
           ./mvnw clean package
 
@@ -40,7 +40,7 @@ jobs:
 
       # 5. Build Docker Image
       - name: Build Backend Docker Image
-        working-directory: ./backend
+        working-directory: demo-api
         run: |
           docker build -t ${{ secrets.DOCKER_USERNAME }}/demo-api:latest .
 
