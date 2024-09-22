@@ -18,5 +18,4 @@ export class WelcomeService {
   getRandomQuote(): Observable<any> {
     return this.http.get<any>(this.quoteUrl);
   }
-
 }
