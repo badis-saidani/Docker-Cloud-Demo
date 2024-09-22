@@ -14,17 +14,17 @@ jobs:
     steps:
       # 1. Checkout Code
       - name: Checkout Frontend Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
         with:
           path: demo-ui
 
       # 2. Set up Node.js
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
           node-version: '18'
 
-	# Debug Step: List Root Directory
+      # Debug Step: List Root Directory
       - name: List Root Directory
         run: ls -la
         working-directory: ./
@@ -33,10 +33,6 @@ jobs:
       - name: List demo-ui Directory
         run: ls -la
         working-directory: ./demo-ui
-
-	# Step 3: Navigate to demo-ui directory
-      - name: Change Directory
-        run: cd demo-ui
 
       # 3. Install Dependencies
       - name: Install Dependencies
@@ -76,7 +72,6 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            
             # Pull the latest frontend image
             docker pull ${{ secrets.DOCKER_USERNAME }}/demo-ui:latest
 
