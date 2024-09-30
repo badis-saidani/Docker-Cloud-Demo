@@ -9,6 +9,8 @@ This project is a simple demonstration of RESTful communication between a Spring
 - **Containerization**: Both the frontend and backend are built as Docker containers, ensuring consistency across different environments.
 - **RESTful API**: The backend exposes a RESTful API for communication with the frontend.
 - **Angular Guard**: An Angular guard is implemented to prevent unauthenticated access to the welcome page which calls the backend API. Users must provide a username before they can communicate with the backend.
+- **Interceptor**: In order to add token to the outgoing requests.
+- **OAuth2**: Added authorization service (keycloak) for security and account management.
 
 ## Swagger API Documentation
 
@@ -19,12 +21,6 @@ The following links provide access to the Swagger UI for the backend API:
 ## Test the demo live
 - [DemoUi](http://107.22.12.230)
 
-## To Do
-
-- **Add a CI/CD Pipeline**: Implement a continuous integration and continuous deployment pipeline to automate the build, test, and deployment processes.
-- **Improve the Project**: Enhance the demo by adding additional features such as:
-  - **Security**: Implement authentication and authorization mechanisms.
-  - **Data Persistency**: Integrate a database to ensure data persistence across container restarts.
 
 ## Getting Started
 
