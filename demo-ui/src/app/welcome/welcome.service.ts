@@ -1,14 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WelcomeService {
 
-  private msgUrl = 'http://107.22.12.230:8080/api/welcome';
-  private quoteUrl = '/zenApi/api/random';
+  private baseUrl = `${environment.baseUrl}:8080/api`
+  private msgUrl = `${this.baseUrl}/welcome`;
+  private quoteUrl = `${this.baseUrl}/quote`;
 
   constructor(private http: HttpClient) {}
 
@@ -16,6 +18,6 @@ export class WelcomeService {
     return this.http.get<any>(this.msgUrl);
   }
   getRandomQuote(): Observable<any> {
-    return this.http.get<any>(this.quoteUrl);
+    return this.http.get<any>(`${this.quoteUrl}`);
   }
 }

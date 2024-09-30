@@ -1,7 +1,39 @@
+spring:
+  profiles:
+    active: dev  # Default profile
+
 logging:
   file:
-   name: logs/demo.log
+    name: logs/demo.log
   level:
     root: info
     com.badissaidani.demo: DEBUG
+
+quote:
+  url: https://zenquotes.io/api/random
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:9090/realms/demo-realm
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://107.22.12.230:9090/realms/badissaidani
+
 

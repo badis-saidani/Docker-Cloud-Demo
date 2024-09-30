@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { WelcomeService } from './welcome.service';
+import { KeycloakService } from '../keycloak/keycloak.service';
 
 @Component({
   selector: 'app-welcome',
@@ -12,11 +13,12 @@ export class WelcomeComponent implements OnInit{
   msg: string = '';
   quote: string = '';
   author: string = '';
-  username: string | null;
+  username: string | undefined;
 
-  constructor(private service: WelcomeService, private router: Router) {
-    this.username = localStorage.getItem('username');
+  constructor(private service: WelcomeService, private router: Router, private keycloak: KeycloakService) {
+    this.username = keycloak.profile?.firstName;
   }
+
   ngOnInit(): void {
     this.fetchWelcomeMessage();
     this.fetchQuote();
@@ -28,20 +30,25 @@ export class WelcomeComponent implements OnInit{
     );
   }
   fetchQuote(): void {
-    this.service.getRandomQuote().subscribe({
-      next: (data) => {
-        if (data && data.length > 0) {
-          this.quote = data[0].q;
-          this.author = data[0].a;
-        }
+    this.service.getRandomQuote().subscribe(
+      (data) => {
+        this.quote = data.q;
+        this.author = data.a;
+      },
+      (err) => {
+        console.error(err);
+        
       }
-    });
+    );
   }
 
-  exit() {
-    localStorage.removeItem('username');
-    this.router.navigate(['/']);
-  }
+  // exit() {
+  //   localStorage.removeItem('username');
+  //   this.router.navigate(['/']);
+  // }
 
+  logout() {
+    this.keycloak.logout();
+}
 
 }
