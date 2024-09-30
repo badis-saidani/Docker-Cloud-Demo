@@ -16,7 +16,7 @@ This project is a simple demonstration of RESTful communication between a Spring
 
 The following links provide access to the Swagger UI for the backend API:
 
-- [API Documentation for this demo project](http://107.22.12.230/swagger-ui.html)
+- [API Documentation for this demo project](http://107.22.12.230:8080/swagger-ui.html)
 
 ## Test the demo live
 - [DemoUi](http://107.22.12.230)
