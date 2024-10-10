@@ -21,6 +21,8 @@ The following links provide access to the Swagger UI for the backend API:
 ## Test the demo live
 - [DemoUi](http://107.22.12.230)
 
+http://107.22.12.230
+
 
 ## Getting Started
 
